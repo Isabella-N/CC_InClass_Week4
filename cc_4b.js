@@ -7,9 +7,10 @@ let products = [{
     {sku:"SKU-006", name: "Super Mugs", category: "kitchen", price: 15.00, inventory: 300}]
 
 // Displays all of the discounts for each category
-for (let product in products) {
+//for (let ------ OF -----) the "of" is very important
+for (let product of products) {
     let discounts = 0;
-
+//make sure everything is spelled the same
     switch (product.category) {
     case "apparel":
         discounts = 0.20;
@@ -22,16 +23,23 @@ for (let product in products) {
         break;
     default:
         discounts = 0;
-}}
-
-let promoPrice = product.price * (product.price*discounts));
+    }
+//needs to be inside of the function so it stays defined
+let promoPrice = product.price * (product.price* discounts);
+// console.log(promoPrice)
 product.promoPrice = promoPrice.toFixed(2)
+}
 
+let customerType = ["regular", "student", "senior"]
+let customerDiscounts = 0;
 
-
-//let customerType = ["regular", "student", "senior"]
-
-//if (customerType = "regular") { 
-    //console.log()}
+if (customerType = "regular") { 
+    customerDiscounts = 0}
+    else if (customerType = "student") { 
+        customerDiscounts = 0.10}
+    else if (customerType = "senior") {
+        customerDiscounts = 0.20}
+    else {
+        customerDiscounts = 0}
 
 console.log(products);
